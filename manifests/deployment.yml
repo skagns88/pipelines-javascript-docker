@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: skagnspipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skagnspipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: skagnspipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: skagnspipelinesjavascriptdocker 
+          image: nhappacr.azurecr.io/skagnspipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
